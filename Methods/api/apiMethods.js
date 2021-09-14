@@ -5,7 +5,7 @@ const checkBoard = require('../tic-tac-toe/checkBoard');
 const Game = require('../../models/Game');
 
 
-async function NewGame (req,res){ 
+function NewGame (req,res){ 
     let input = req.body;
     let output = createGame(input);
     let game = new Game(output);
