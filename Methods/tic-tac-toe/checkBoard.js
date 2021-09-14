@@ -3,7 +3,7 @@ function checkBoard(board){
     if (board === undefined){
 		return undefined;
 	}
-	let winningCombinations = [
+	const winningCombinations = [
 		[0, 1, 2],
 		[3, 4, 5],
 		[6, 7, 8],
