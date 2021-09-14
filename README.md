@@ -1,7 +1,7 @@
 # Tic-Tac-Toe Game API
 
-This API designed to play Tic-Tac-Toe player vs player.
-An empty Tic-Tac-Toe board is represented as an array like this: ["","","","","","","","",""].
+This API designed to play Tic-Tac-Toe player vs player./n
+An empty Tic-Tac-Toe board is represented as an array like this: ["","","","","","","","",""]./n
 The array in index 0 represent the top left cell, index 4 the middele cell and index 8 the bottom right cell.
 
 In this task I used: React, Node.js, JavaScript and it's connected to live mongoDB server.
