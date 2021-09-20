@@ -3,10 +3,6 @@ const checkBoard = require('./checkBoard');
 //Expected inputElement to include { match game to given gameId, the new game board as array, player id that play }
 function addMove(inputElement){
     let { game, board, playerId } = inputElement;
-    board.forEach(element => {
-        if (element.toUpperCase() === 'X') x++;
-        if (element.toUpperCase() === 'O') o++;
-    });
 
     let moveSign = board.filter((x, index) => game.board[index] !== x);
     if (moveSign.length > 1) {
