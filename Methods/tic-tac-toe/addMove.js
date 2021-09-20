@@ -2,24 +2,30 @@ const checkBoard = require('./checkBoard');
 
 //Expected inputElement to include { match game to given gameId, the new game board as array, player id that play }
 function addMove(inputElement){
-    let { game, board, playerId } = inputElement
-    let x =0 , o = 0
+    let { game, board, playerId } = inputElement;
     board.forEach(element => {
-        if (element.toUpperCase() === 'X') x++
-        if (element.toUpperCase() === 'O') o++
+        if (element.toUpperCase() === 'X') x++;
+        if (element.toUpperCase() === 'O') o++;
     });
-    
-    if (game.winner && game.winner === playerId){
+
+    let moveSign = board.filter((x, index) => game.board[index] !== x);
+    if (moveSign.length > 1) {
+        throw  "Invalid move"
+    }
+
+    moveSign = moveSign[0].toUpperCase();
+    if (game.player1.id === playerId && game.player1.sign !== moveSign || 
+        game.player2.id === playerId && game.player2.sign !== moveSign) {
+            throw  "Invalid move"
+        }
+    if (game.winnerId && game.winnerId === playerId) {
         throw `YOU WON`
     }
-    if (game.winner && game.winner.id !== playerId){
+    if (game.winnerId && game.winnerId !== playerId) {
         throw `YOU LOSE`
     }
-    if (game.nextToPlay !== null && game.nextToPlay.id !== playerId){
+    if (game.nextToPlay !== null && game.nextToPlay.id !== playerId) {
         throw "NOT YOUR TURN"
-    } 
-    if (x-o > 1 || o-x > 1){
-        throw  "Invalid move"
     } 
 
     let output = checkBoard(board)

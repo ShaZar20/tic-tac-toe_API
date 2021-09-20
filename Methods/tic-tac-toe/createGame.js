@@ -7,7 +7,7 @@ function createGame(inputElement){
         board: ["","","","","","","","",""],
         player1: {
             id: userId,
-            sign: sign
+            sign: sign.toUpperCase()
         },
         player2:{
             id: null,
