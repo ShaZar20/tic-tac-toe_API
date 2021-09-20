@@ -13,7 +13,7 @@ function addMove(inputElement){
     if (game.player1.id === playerId && game.player1.sign !== moveSign || 
         game.player2.id === playerId && game.player2.sign !== moveSign) {
             throw  "Invalid move"
-        }
+    }
     if (game.winnerId && game.winnerId === playerId) {
         throw `YOU WON`
     }
